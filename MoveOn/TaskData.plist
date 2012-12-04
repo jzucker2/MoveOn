@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>startDate</key>
+	<date>2012-11-30T19:49:16Z</date>
+	<key>stopDate</key>
+	<date>2012-11-30T19:49:18Z</date>
+	<key>projectedEndDate</key>
+	<date>2012-11-30T19:50:16Z</date>
+	<key>timeInterval</key>
+	<integer>60</integer>
+	<key>isRunning</key>
+	<false/>
+	<key>isStarted</key>
+	<false/>
+	<key>hasSetTime</key>
+	<false/>
+</dict>
+</plist>
