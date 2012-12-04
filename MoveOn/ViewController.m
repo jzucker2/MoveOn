@@ -19,6 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         _task = [[Task alloc] initFromPlist];
+        _countdownFormatter = [[CountdownFormatter alloc] init];
         //[_task setCountdownTime:60];
         //NSDate *date = [NSDate date];
         
@@ -131,6 +132,7 @@
 
 - (void) startTimer:(BOOL) start
 {
+    _timeLeft = _task.timeLeft;
     if (start) {
         [self lockUI:YES];
         //[_task startTask];
@@ -154,9 +156,19 @@
 
 - (void) updateTimerLabel
 {
+    /*
     if (_task.timeLeft > 0) {
         //[_task decrementCountdown];
         _timerLabel.text = [_task stringForTimeLeft];
+    }
+    else
+    {
+        NSLog(@"ran out of time");
+    }
+     */
+    if (_timeLeft > 0) {
+        _timeLeft--;
+        _timerLabel.text = [_countdownFormatter stringForDouble:_timeLeft];
     }
     else
     {

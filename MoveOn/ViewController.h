@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Task.h"
+#import "CountdownFormatter.h"
 
 @interface ViewController : UIViewController
 
@@ -17,9 +18,13 @@
 
 @property (nonatomic, strong) IBOutlet UIDatePicker *countdownPickerView;
 
+@property (nonatomic, strong) CountdownFormatter *countdownFormatter;
+
 @property (nonatomic, strong) NSTimer *countdownTimer;
 
 @property (nonatomic, strong) Task *task;
+
+@property (nonatomic, assign) NSTimeInterval timeLeft;
 
 - (IBAction)startStopTask:(id)sender;
 

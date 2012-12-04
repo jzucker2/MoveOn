@@ -21,6 +21,7 @@
 		973EFB99166938F700E8CE5A /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 973EFB97166938F700E8CE5A /* ViewController_iPad.xib */; };
 		973EFBA5166944CD00E8CE5A /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 973EFBA4166944CD00E8CE5A /* Task.m */; };
 		973EFBA71669490100E8CE5A /* TaskData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 973EFBA61669490100E8CE5A /* TaskData.plist */; };
+		97422AAF166E7BAB001B4ACD /* CountdownFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 97422AAE166E7BAB001B4ACD /* CountdownFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		973EFBA3166944CD00E8CE5A /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		973EFBA4166944CD00E8CE5A /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		973EFBA61669490100E8CE5A /* TaskData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TaskData.plist; sourceTree = "<group>"; };
+		97422AAD166E7BAB001B4ACD /* CountdownFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountdownFormatter.h; sourceTree = "<group>"; };
+		97422AAE166E7BAB001B4ACD /* CountdownFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountdownFormatter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,7 @@
 		973EFB7F166938F700E8CE5A /* MoveOn */ = {
 			isa = PBXGroup;
 			children = (
+				97422AB0166E7BD0001B4ACD /* Countdown Formatter */,
 				973EFBA2166944B500E8CE5A /* Task */,
 				973EFB9F1669442B00E8CE5A /* Resources */,
 				979AF60A166E729700FACAE6 /* App Delegate */,
@@ -128,6 +132,15 @@
 				973EFBA4166944CD00E8CE5A /* Task.m */,
 			);
 			name = Task;
+			sourceTree = "<group>";
+		};
+		97422AB0166E7BD0001B4ACD /* Countdown Formatter */ = {
+			isa = PBXGroup;
+			children = (
+				97422AAD166E7BAB001B4ACD /* CountdownFormatter.h */,
+				97422AAE166E7BAB001B4ACD /* CountdownFormatter.m */,
+			);
+			name = "Countdown Formatter";
 			sourceTree = "<group>";
 		};
 		979AF60A166E729700FACAE6 /* App Delegate */ = {
@@ -222,6 +235,7 @@
 				973EFB8A166938F700E8CE5A /* AppDelegate.m in Sources */,
 				973EFB93166938F700E8CE5A /* ViewController.m in Sources */,
 				973EFBA5166944CD00E8CE5A /* Task.m in Sources */,
+				97422AAF166E7BAB001B4ACD /* CountdownFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
