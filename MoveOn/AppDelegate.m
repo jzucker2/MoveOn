@@ -25,6 +25,13 @@
     }
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
+    
+    UILocalNotification *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if (notification != nil) {
+        [self application:[UIApplication sharedApplication] didReceiveLocalNotification:notification];
+    }
+    
     return YES;
 }
 
@@ -57,7 +64,17 @@
 
 - (void) application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
+    //NSDictionary *userInfo = notification.userInfo;
+    
+    //Task *task = [userInfo objectForKey:@"task"];
+    
+    [self.viewController endTask];
+    
+    //[task endTask];
+    
     NSLog(@"finish task");
+    
+    
     
 }
 

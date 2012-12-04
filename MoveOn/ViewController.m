@@ -149,6 +149,13 @@
     }
 }
 
+- (void) endTask
+{
+    NSLog(@"endTask in view controller");
+    [_task endTask];
+    [self lockUI:NO];
+}
+
 - (void) finishTimer
 {
     [_task endTask];
@@ -173,6 +180,7 @@
     else
     {
         NSLog(@"ran out of time");
+        [self endTask];
     }
 }
 

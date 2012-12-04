@@ -28,6 +28,8 @@
 
 - (IBAction)startStopTask:(id)sender;
 
+- (void) endTask;
+
 - (void) startTimer:(BOOL) start;
 
 - (void) updateTimerLabel;

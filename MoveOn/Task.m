@@ -161,8 +161,13 @@
 
 - (BOOL) endTask
 {
+    _isStarted = NO;
+    _hasSetTime = NO;
     _isRunning = NO;
+    _timeInterval = 60;
     [self saveToPlist];
+    
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
     
     return YES;
 }
@@ -175,6 +180,10 @@
     
     taskNotification.fireDate = _projectedEndDate;
     taskNotification.timeZone = [NSTimeZone defaultTimeZone];
+    
+    //NSDictionary *infoDict = [[NSDictionary alloc] initWithObjectsAndKeys:self, @"task", nil];
+    
+    //taskNotification.userInfo = infoDict;
     
     [[UIApplication sharedApplication] scheduleLocalNotification:taskNotification];
 }
