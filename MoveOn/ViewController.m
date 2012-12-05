@@ -183,7 +183,8 @@
 {
     NSLog(@"endTask in view controller");
     [_task endTask];
-    [self lockUI:NO];
+    [self startTimer:NO];
+    //[self lockUI:NO];
 }
 
 - (void) finishTimer
