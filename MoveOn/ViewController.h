@@ -40,4 +40,8 @@
 
 - (IBAction)setTimeInterval:(id)sender;
 
+- (void) setUp;
+
+- (IBAction)showAboutView:(id)sender;
+
 @end

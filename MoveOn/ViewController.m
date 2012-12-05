@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AboutViewController.h"
 
 @interface ViewController ()
 
@@ -31,7 +32,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [_startStopButton setTitle:@"Start" forState:UIControlStateNormal];
+    
+    [self setUp];
+    //[_startStopButton setTitle:@"Start" forState:UIControlStateNormal];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(viewWillAppear:) name:UIApplicationWillEnterForegroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(viewWillDisappear:) name:UIApplicationDidEnterBackgroundNotification object:nil];
@@ -47,7 +50,11 @@
     
     NSLog(@"viewWillAppear");
     
-    if (_task.isRunning) {
+    self.navigationController.navigationBar.topItem.title = @"MoveOn";
+    
+    if (_task.isRunning)
+    {
+        NSLog(@"viewWillAppear");
         [self startTimer:YES];
     }
     
@@ -68,6 +75,19 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) setUp
+{
+    [_startStopButton setTitle:@"Start" forState:UIControlStateNormal];
+    
+    self.navigationController.navigationBar.topItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"About" style:UIBarButtonItemStyleBordered target:self action:@selector(showAboutView:)];
+    
+    //self.navigationController.navigationBar.topItem.title = @"MoveOn";
+    
+    //[_startStopButton setTintColor:[UIColor redColor]];
+    //[_startStopButton setBackgroundColor:[UIColor redColor]];
+    //[_setTimeButton setTintColor:[UIColor redColor]];
 }
 
 #pragma mark - UI Methods
@@ -106,6 +126,12 @@
     }
 }
 
+- (IBAction)showAboutView:(id)sender
+{
+    AboutViewController *aboutView = [[AboutViewController alloc] initWithNibName:@"AboutView" bundle:nil];
+    [self.navigationController pushViewController:aboutView animated:YES];
+}
+
 - (void) lockUI:(BOOL) isLocked
 {
     if (isLocked)
@@ -113,6 +139,7 @@
         [_countdownPickerView setEnabled:!isLocked];
         [_startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
         [_setTimeButton setEnabled:!isLocked];
+        //[_startStopButton setTintColor:[UIColor greenColor]];
         
     }
     else
@@ -120,6 +147,7 @@
         [_startStopButton setTitle:@"Start" forState:UIControlStateNormal];
         [_countdownPickerView setEnabled:!isLocked];
         [_setTimeButton setEnabled:!isLocked];
+        //[_startStopButton setTintColor:[UIColor redColor]];
     }
 }
 
@@ -128,6 +156,8 @@
     [_task setCountdownTime:_countdownPickerView.countDownDuration];
     
     _timerLabel.text = [_task stringForTimeLeft];
+    
+    //[_setTimeButton setTintColor:[UIColor greenColor]];
 }
 
 - (void) startTimer:(BOOL) start

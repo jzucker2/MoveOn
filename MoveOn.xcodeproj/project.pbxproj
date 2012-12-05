@@ -22,6 +22,8 @@
 		973EFBA5166944CD00E8CE5A /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 973EFBA4166944CD00E8CE5A /* Task.m */; };
 		973EFBA71669490100E8CE5A /* TaskData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 973EFBA61669490100E8CE5A /* TaskData.plist */; };
 		97422AAF166E7BAB001B4ACD /* CountdownFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 97422AAE166E7BAB001B4ACD /* CountdownFormatter.m */; };
+		97F903BD166FC69A0037004D /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97F903BB166FC69A0037004D /* AboutViewController.m */; };
+		97F903BE166FC69A0037004D /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97F903BC166FC69A0037004D /* AboutView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,9 @@
 		973EFBA61669490100E8CE5A /* TaskData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TaskData.plist; sourceTree = "<group>"; };
 		97422AAD166E7BAB001B4ACD /* CountdownFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountdownFormatter.h; sourceTree = "<group>"; };
 		97422AAE166E7BAB001B4ACD /* CountdownFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountdownFormatter.m; sourceTree = "<group>"; };
+		97F903BA166FC69A0037004D /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		97F903BB166FC69A0037004D /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		97F903BC166FC69A0037004D /* AboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +104,7 @@
 				979AF60A166E729700FACAE6 /* App Delegate */,
 				979AF60B166E729F00FACAE6 /* Main View Controller */,
 				973EFB80166938F700E8CE5A /* Supporting Files */,
+				97F903BF166FC69E0037004D /* About View Controller */,
 			);
 			path = MoveOn;
 			sourceTree = "<group>";
@@ -163,6 +169,16 @@
 			name = "Main View Controller";
 			sourceTree = "<group>";
 		};
+		97F903BF166FC69E0037004D /* About View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				97F903BA166FC69A0037004D /* AboutViewController.h */,
+				97F903BB166FC69A0037004D /* AboutViewController.m */,
+				97F903BC166FC69A0037004D /* AboutView.xib */,
+			);
+			name = "About View Controller";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -221,6 +237,7 @@
 				973EFB96166938F700E8CE5A /* ViewController_iPhone.xib in Resources */,
 				973EFB99166938F700E8CE5A /* ViewController_iPad.xib in Resources */,
 				973EFBA71669490100E8CE5A /* TaskData.plist in Resources */,
+				97F903BE166FC69A0037004D /* AboutView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +253,7 @@
 				973EFB93166938F700E8CE5A /* ViewController.m in Sources */,
 				973EFBA5166944CD00E8CE5A /* Task.m in Sources */,
 				97422AAF166E7BAB001B4ACD /* CountdownFormatter.m in Sources */,
+				97F903BD166FC69A0037004D /* AboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
