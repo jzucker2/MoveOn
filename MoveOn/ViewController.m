@@ -155,7 +155,8 @@
 {
     [_task setCountdownTime:_countdownPickerView.countDownDuration];
     
-    _timerLabel.text = [_task stringForTimeLeft];
+    //_timerLabel.text = [_task stringForTimeLeft];
+    _timerLabel.text = [_countdownFormatter stringForDouble:_task.timeLeft];
     
     //[_setTimeButton setTintColor:[UIColor greenColor]];
 }
