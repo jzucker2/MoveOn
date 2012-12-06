@@ -22,6 +22,7 @@
         _task = [[Task alloc] initFromPlist];
         _countdownFormatter = [[CountdownFormatter alloc] init];
         _isEndingTask = NO;
+        self.title = @"MoveOn";
         //[_task setCountdownTime:60];
         //NSDate *date = [NSDate date];
         
@@ -51,7 +52,7 @@
     
     NSLog(@"viewWillAppear");
     
-    self.navigationController.navigationBar.topItem.title = @"MoveOn";
+    //self.navigationController.navigationBar.topItem.title = @"MoveOn";
     
     if (_task.isRunning && (_task.timeLeft > 0))
     {
@@ -188,9 +189,22 @@
 
 - (void) endTask
 {
-    NSLog(@"endTask in view controller");
+    NSLog(@"endTask in view controller called");
+    /*
+    if (!_task.isFinished) {
+        NSLog(@"task isn't finished, must end it");
+        [_task endTask];
+        [self startTimer:NO];
+    }
+    else
+    {
+        NSLog(@"task already finished");
+    }
+     */
     [_task endTask];
     [self startTimer:NO];
+    //[_task endTask];
+    //[self startTimer:NO];
     //[self lockUI:NO];
 }
 

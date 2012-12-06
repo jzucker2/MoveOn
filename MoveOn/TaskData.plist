@@ -16,5 +16,7 @@
 	<false/>
 	<key>hasSetTime</key>
 	<false/>
+	<key>isFinished</key>
+	<false/>
 </dict>
 </plist>

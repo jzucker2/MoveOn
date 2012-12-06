@@ -17,6 +17,7 @@
 @property (nonatomic, assign) BOOL isRunning;
 @property (nonatomic, assign) BOOL isStarted;
 @property (nonatomic, assign) BOOL hasSetTime;
+@property (nonatomic, assign) BOOL isFinished;
 @property (nonatomic, assign) NSTimeInterval timeInterval;
 //@property (nonatomic, assign) NSTimeInterval timeLeft;
 

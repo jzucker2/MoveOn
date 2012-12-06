@@ -19,6 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.title = @"About";
     }
     return self;
 }
@@ -28,7 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.navigationController.navigationBar.topItem.title = @"About";
+    //self.navigationController.navigationBar.topItem.title = @"About";
 }
 
 - (void) viewWillAppear:(BOOL)animated

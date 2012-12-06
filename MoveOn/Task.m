@@ -54,6 +54,8 @@
     
     _hasSetTime = [[_plistDict objectForKey:@"hasSetTime"] boolValue];
     
+    _isFinished = [[_plistDict objectForKey:@"isFinished"] boolValue];
+    
     //NSLog(@"_plistDict is %@", _plistDict);
     
 }
@@ -67,6 +69,7 @@
     [_plistDict setValue:[NSNumber numberWithDouble:_timeInterval] forKey:@"timeInterval"];
     [_plistDict setValue:[NSNumber numberWithBool:_isStarted] forKey:@"isStarted"];
     [_plistDict setValue:[NSNumber numberWithBool:_hasSetTime] forKey:@"hasSetTime"];
+    [_plistDict setValue:[NSNumber numberWithBool:_isFinished] forKey:@"isFinished"];
     
     NSLog(@"saveToPlist");
     NSLog(@"_plistDict is %@", _plistDict);
@@ -78,6 +81,7 @@
 {
     _hasSetTime = YES;
     _timeInterval = time;
+    _isFinished = NO;
     
     [self saveToPlist];
 }
@@ -161,10 +165,16 @@
 
 - (BOOL) endTask
 {
+    if (_isFinished) {
+        NSLog(@"task already finished");
+        return NO;
+    }
+    NSLog(@"task needs to be ended");
     _isStarted = NO;
     _hasSetTime = NO;
     _isRunning = NO;
     _timeInterval = 60;
+    _isFinished = YES;
     [self saveToPlist];
     
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
