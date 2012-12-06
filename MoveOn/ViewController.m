@@ -52,12 +52,12 @@
     
     self.navigationController.navigationBar.topItem.title = @"MoveOn";
     
-    if (_task.isRunning)
+    if (_task.isRunning && (_task.timeLeft > 0))
     {
-        //NSLog(@"viewWillAppear");
+        NSLog(@"task is running, start timer");
         [self startTimer:YES];
     }
-    else if (_task.timeLeft < 0)
+    else if (_task.isRunning && (_task.timeLeft < 0))
     {
         NSLog(@"task already finished, but no notification was fired");
         [self endTask];

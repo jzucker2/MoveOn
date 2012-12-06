@@ -76,7 +76,7 @@
     [self.viewController endTask];
     
     //[task endTask];
-    
+    NSLog(@"app Delegate did receive local notification");
     NSLog(@"++++++++++++++++++++++++");
     NSLog(@"finish task");
     NSLog(@"++++++++++++++++++++++++");
