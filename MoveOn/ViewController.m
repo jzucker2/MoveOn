@@ -21,6 +21,7 @@
     if (self) {
         _task = [[Task alloc] initFromPlist];
         _countdownFormatter = [[CountdownFormatter alloc] init];
+        _isEndingTask = NO;
         //[_task setCountdownTime:60];
         //NSDate *date = [NSDate date];
         

@@ -26,6 +26,8 @@
 
 @property (nonatomic, assign) NSTimeInterval timeLeft;
 
+@property (nonatomic, assign) BOOL isEndingTask;
+
 - (IBAction)startStopTask:(id)sender;
 
 - (void) endTask;
