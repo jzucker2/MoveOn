@@ -169,7 +169,15 @@
     
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
     
+    [self showAlertToEndTask];
+    
     return YES;
+}
+
+- (void) showAlertToEndTask
+{
+    UIAlertView *endTaskAlert = [[UIAlertView alloc] initWithTitle:@"Task is over" message:@"You just finished your task, acknowledge it bitch" delegate:nil cancelButtonTitle:@"Move On" otherButtonTitles:nil];
+    [endTaskAlert show];
 }
 
 - (void) scheduleNotification
@@ -181,11 +189,29 @@
     taskNotification.fireDate = _projectedEndDate;
     taskNotification.timeZone = [NSTimeZone defaultTimeZone];
     
+    [[UIApplication sharedApplication] scheduleLocalNotification:taskNotification];
+    
     //NSDictionary *infoDict = [[NSDictionary alloc] initWithObjectsAndKeys:self, @"task", nil];
     
     //taskNotification.userInfo = infoDict;
     
-    [[UIApplication sharedApplication] scheduleLocalNotification:taskNotification];
+    UILocalNotification *reminderNotification = [[UILocalNotification alloc] init];
+    reminderNotification.alertBody = @"Your task already finished";
+    reminderNotification.alertAction = @"Finish task";
+    reminderNotification.timeZone = [NSTimeZone defaultTimeZone];
+    // schedule reminder notifications
+    for (NSInteger i = 1; i <=3; i++)
+    {
+        NSTimeInterval paddedTime = 120 * i;
+        reminderNotification.fireDate = [_projectedEndDate dateByAddingTimeInterval:paddedTime];
+        [[UIApplication sharedApplication] scheduleLocalNotification:reminderNotification];
+    }
+    
+    /*
+    for (UILocalNotification *notification in [[UIApplication sharedApplication] scheduledLocalNotifications]) {
+        NSLog(@"notification is %@", notification);
+    }
+     */
 }
 
 

@@ -53,4 +53,6 @@
 
 - (BOOL) startStopTask;
 
+- (void) showAlertToEndTask;
+
 @end

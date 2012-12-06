@@ -34,8 +34,6 @@
 
 - (void) updateTimerLabel;
 
-- (void) finishTimer;
-
 - (void) lockUI:(BOOL) isLocked;
 
 - (IBAction)setTimeInterval:(id)sender;

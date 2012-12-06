@@ -54,8 +54,13 @@
     
     if (_task.isRunning)
     {
-        NSLog(@"viewWillAppear");
+        //NSLog(@"viewWillAppear");
         [self startTimer:YES];
+    }
+    else if (_task.timeLeft < 0)
+    {
+        NSLog(@"task already finished, but no notification was fired");
+        [self endTask];
     }
     
     _timerLabel.text = [_task stringForTimeLeft];
@@ -188,11 +193,6 @@
     //[self lockUI:NO];
 }
 
-- (void) finishTimer
-{
-    [_task endTask];
-}
-
 - (void) updateTimerLabel
 {
     /*
@@ -212,7 +212,7 @@
     else
     {
         NSLog(@"ran out of time");
-        [self endTask];
+        //[self endTask];
     }
 }
 
