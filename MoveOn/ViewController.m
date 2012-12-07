@@ -65,7 +65,8 @@
         [self endTask];
     }
     
-    _timerLabel.text = [_task stringForTimeLeft];
+    //_timerLabel.text = [_task stringForTimeLeft];
+    _timerLabel.text = [_countdownFormatter stringForDouble:_task.timeLeft];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -233,6 +234,7 @@
 
 - (void) dealloc
 {
-    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
 }
 @end
